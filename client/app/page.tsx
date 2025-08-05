@@ -1,5 +1,6 @@
 "use client";
 
+import CreateTicketButton from "@/components/tickets/create-button";
 import TicketsTable from "@/components/tickets/table";
 import { useTicketsQuery } from "@/lib/hooks/queries/tickets";
 import { mockTickets } from "@/lib/tickets.mock";
@@ -16,5 +17,10 @@ export default function Home() {
     return <div>Loading tickets...</div>;
   }
 
-  return <TicketsTable tickets={tickets} />;
+  return (
+    <>
+      <CreateTicketButton className="" />
+      <TicketsTable tickets={tickets} />
+    </>
+  );
 }
