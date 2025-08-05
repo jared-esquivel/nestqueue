@@ -9,3 +9,8 @@ export async function getTickets() {
   const { data } = await client.get<response>("/tickets");
   return data.tickets;
 }
+
+export async function createTicket(ticket: Partial<Ticket>) {
+  const { data } = await client.post<Ticket>("/tickets", ticket);
+  return data;
+}
